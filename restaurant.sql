@@ -39,6 +39,7 @@ INSERT INTO restaurant VALUES
 );
 
 
+-- postgresql exercises
 
 SELECT name FROM restaurant WHERE stars = 5;
 
@@ -57,3 +58,21 @@ SELECT name FROM restaurant WHERE distance_from_headquarters_in_miles < 2;
 SELECT name FROM restaurant WHERE last_visit < now() - interval '7 days';
 
 SELECT name from restaurant WHERE last_visit < now() - interval '7 days' AND stars = 5;
+
+
+
+-- postgresql aggregation and sorting queries exercises
+
+SELECT * FROM restaurant ORDER BY distance_from_headquarters_in_miles ASC;
+
+SELECT * FROM restaurant ORDER BY distance_from_headquarters_in_miles ASC limit 2;
+
+SELECT * FROM restaurant WHERE distance_from_headquarters_in_miles < 2 ORDER BY stars DESC;
+
+SELECT count(*) FROM restaurant;
+
+SELECT category_by_type_of_food, count(*) FROM restaurant GROUP BY category_by_type_of_food;
+
+SELECT category_by_type_of_food, AVG(stars) FROM restaurant GROUP BY category_by_type_of_food;
+
+SELECT category_by_type_of_food, MAX(stars) FROM restaurant GROUP BY category_by_type_of_food;

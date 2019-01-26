@@ -1,5 +1,5 @@
 
--- table create
+-- table create restaurant
 CREATE TABLE restaurant(
     id SERIAL NOT NULL PRIMARY KEY,
     name varchar(20),
